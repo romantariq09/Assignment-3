@@ -46,5 +46,9 @@ function getWeather() {
                 <p><strong>Sunset:</strong> ${sunset}</p>
 
             `;
+        })
+        .catch(err => {
+            document.getElementById("result").innerHTML =
+                "<p>Error fetching data. Please try again.</p>";
         });
 }
