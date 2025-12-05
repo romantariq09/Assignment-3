@@ -9,6 +9,12 @@ function convertTime(timestamp) {
 function getWeather() {
     const city = document.getElementById("city").value;
 
+ if (!city) {
+        alert("Please enter a city name");
+        return;
+    }
+
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
     fetch(url)
