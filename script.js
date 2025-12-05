@@ -11,6 +11,8 @@ function getWeather() {
         .then(response => response.json())
         .then(data => {
 
+            const icon = data.weather[0].icon;
+
             const name = data.name;
             const temp = data.main.temp;
              const desc = data.weather[0].description;
@@ -19,6 +21,10 @@ function getWeather() {
 
             document.getElementById("result").innerHTML = `
                 <h2>Weather in ${name}</h2>
+
+                <img class="weather-icon" src="https://openweathermap.org/img/wn/${icon}@2x.png">
+
+
                 <p><strong>Temperature:</strong> ${temp}°C</p>
                  <p><strong>Description:</strong> ${desc}</p>
                 <p><strong>Humidity:</strong> ${humidity}%</p>
