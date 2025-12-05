@@ -13,10 +13,16 @@ function getWeather() {
 
             const name = data.name;
             const temp = data.main.temp;
+             const desc = data.weather[0].description;
+            const humidity = data.main.humidity;
+            const wind = data.wind.speed;
 
             document.getElementById("result").innerHTML = `
                 <h2>Weather in ${name}</h2>
                 <p><strong>Temperature:</strong> ${temp}°C</p>
+                 <p><strong>Description:</strong> ${desc}</p>
+                <p><strong>Humidity:</strong> ${humidity}%</p>
+                <p><strong>Wind Speed:</strong> ${wind} m/s</p>
             `;
         });
 }
