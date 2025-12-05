@@ -21,6 +21,13 @@ function getWeather() {
         .then(response => response.json())
         .then(data => {
 
+             if (data.cod === "404") {
+            document.getElementById("result").innerHTML =
+                "<p>City not found. Please try again.</p>";
+            return;
+        }
+
+
             const icon = data.weather[0].icon;
 
             const name = data.name;
