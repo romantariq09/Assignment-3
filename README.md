@@ -23,7 +23,8 @@ https://openweathermap.org/current
 2. Click **Get Weather**  
 3. Weather info appears on screen  
 
+##  Live Demo
+https://romantariq09.github.io/Assignment-3/
 
-
-## 📁 Repository
+##  Repository
 https://github.com/romantariq09/Assignment-3.git
