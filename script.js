@@ -2,6 +2,10 @@ const API_KEY = "8617474218b69d8297060d0d081038cc";
 
 document.getElementById("btn").addEventListener("click", getWeather);
 
+function convertTime(timestamp) {
+    return new Date(timestamp * 1000).toLocaleTimeString();
+}
+
 function getWeather() {
     const city = document.getElementById("city").value;
 
@@ -21,6 +25,9 @@ function getWeather() {
             const feels = data.main.feels_like;
             const min = data.main.temp_min;
             const max = data.main.temp_max;
+            const sunrise = convertTime(data.sys.sunrise);
+            const sunset = convertTime(data.sys.sunset);
+
 
             document.getElementById("result").innerHTML = `
                 <h2>Weather in ${name}</h2>
@@ -35,6 +42,8 @@ function getWeather() {
                 <p><strong>Feels Like:</strong> ${feels}°C</p>
                 <p><strong>Min Temp:</strong> ${min}°C</p>
                 <p><strong>Max Temp:</strong> ${max}°C</p>
+                <p><strong>Sunrise:</strong> ${sunrise}</p>
+                <p><strong>Sunset:</strong> ${sunset}</p>
 
             `;
         });
