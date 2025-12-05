@@ -18,6 +18,9 @@ function getWeather() {
              const desc = data.weather[0].description;
             const humidity = data.main.humidity;
             const wind = data.wind.speed;
+            const feels = data.main.feels_like;
+            const min = data.main.temp_min;
+            const max = data.main.temp_max;
 
             document.getElementById("result").innerHTML = `
                 <h2>Weather in ${name}</h2>
@@ -29,6 +32,10 @@ function getWeather() {
                  <p><strong>Description:</strong> ${desc}</p>
                 <p><strong>Humidity:</strong> ${humidity}%</p>
                 <p><strong>Wind Speed:</strong> ${wind} m/s</p>
+                <p><strong>Feels Like:</strong> ${feels}°C</p>
+                <p><strong>Min Temp:</strong> ${min}°C</p>
+                <p><strong>Max Temp:</strong> ${max}°C</p>
+
             `;
         });
 }
